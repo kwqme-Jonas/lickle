@@ -2,7 +2,7 @@ import { AnimatePresence } from 'framer-motion';
 import React from 'react';
 import { Route, Routes} from 'react-router';
 // eslint-disable-next-line no-unused-vars
-import { Header, Maincontainer, createContainer } from './components';
+import { Header, Maincontainer, CreateContainer } from './components';
 
 const App = () => {
     return (
@@ -10,10 +10,10 @@ const App = () => {
             <div className="w-screen h-auto flex flex-col bg-primary"> 
             <Header />
 
-            <main className='mt-24 p-8 w-full'>
+            <main className='mt-14 md:mt-20 px-4 md:px-16 py-4 w-full'>
                 <Routes>
                     <Route path='/*' element={<Maincontainer/>} />
-                    <Route path='/createItem' element={<createContainer/>} />
+                    <Route path='/createItem' element={<CreateContainer/>} />
                 </Routes>
             </main> 
         </div>

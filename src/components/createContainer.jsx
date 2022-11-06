@@ -1,9 +1,9 @@
 import React from 'react';
 
-const createContainer = () => {
+const CreateContainer = () => {
   return (
-    <div>createContainer</div>
+    <div>CreateContainer</div>
   )
 };
 
-export default createContainer;
+export default CreateContainer;
