@@ -26,10 +26,10 @@ const HomeContainer = () => {
         </p>
         
         <p className='text-base text-textColor text-center md:text-left md:w-[80%]'>
-          lorem ipsun dolor sdhs hsabdhasbda hsbhada hsdasb hbbajsda jaskdjkasda jkaskjdewajsfba jkasjedb jdajkedhakd baskhdjkadajk jaksdkas jakdkaks 
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam libero aperiam culpa, blanditiis voluptatibus fuga sed atque aut et, quidem deserunt officiis magni, saepe iusto error. Odit voluptas quisquam illum, ut velit rem exercitationem praesentium veniam laudantium aliquam animi alias?
         </p>
 
-        <button type='button' className='bg-gradient-to-br from-orange-500 w-full md:w-auto px-4 py-2 rounded-lg hover:shadow-lg transition-all ease-in-out duration-100'>Order Now</button>
+        <button type='button' className='bg-orange-600 w-full md:w-auto px-4 py-2 rounded-lg hover:shadow-lg transition-all ease-in-out duration-100'>Order Now</button>
       </div>
       <div className='py-2 flex-1 flex items-center relative'>   
               <img src={HeroBg}
@@ -37,21 +37,23 @@ const HomeContainer = () => {
                   alt="hero-bg"
               />
 
-        <div className='w-full h-full absolute top-0 left-0 flex items-center justify-center px-32 py-4 gap-4 flex-wrap'>
+        <div className='w-full h-full absolute top-0 left-0 flex items-center justify-center py-4 lg:px-32 gap-4 flex-wrap'>
                   {heroData && heroData.map(n => (
-                      <div key={n.id}
-                          className='w-190 min-w-[190px] bg-cardOverlay backdrop-blur-md rounded-3xl p-4 flex  flex-col items-center justify-center drop-shadow-lg'>
-                      <img src={n.imageSrc} className='w-40    -mt-20' alt="i1" />   
-                         <p className='text-xl text-textColor font-semibold mt-4'>{n.name}</p>
-                         <p className='text-sm text-lighttextGray font-semibold my-3'>
+                      <div key={n.id} className='lg:w-190 bg-cardOverlay backdrop-blur-md rounded-3xl p-4 flex  flex-col  items-center justify-center drop-shadow-lg'>
+                          <img src={n.imageSrc}
+                              className='w-20 -mt-10 lg:w-40 lg:-mt-20' alt="i1" />   
+                          <p className='text-base lg:text-xl text-textColor font-semibold mt-2 lg:mt-4'>
+                              {n.name}
+                          </p>
+                         <p className='text-[12px] lg:text-sm text-lighttextGray font-semibold my-1 lg:my-4'>
                              {n.decp}
                          </p>
                          <p className='text-sm font-semibold text-headingColor'><span className='text-xs text-red-600'>GHC</span>{n.price}
                          </p>
                </div>
-                  ))}
+              ))}
         </div>
-          </div>
+      </div>
     </section>
   )
 }
