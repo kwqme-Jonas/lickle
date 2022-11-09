@@ -22,7 +22,7 @@ const Header = () => {
     
     const login = async () => {
         if (!user) {
-            const {user : {refreshToken, providerData}} = await signInWithPopup(firebaseAuth, provider);
+            const {user : { providerData}} = await signInWithPopup(firebaseAuth, provider);
         dispatch({
             type : actionType.SET_USER,
             user : providerData[0],
@@ -98,11 +98,10 @@ const Header = () => {
                         }
                     </div>
                 </div>
-        </div>
+         </div>
 
 
-            <div className='flex item-center justify-between md:hidden w-full h-full'>
-                
+            <div className='flex item-center justify-between md:hidden w-full h-full'>      
                 <div className='relative flex items-center justify-center -top-1'>
                     <MdShoppingBasket className='text-textColor text-2xl cursor-pointer' />
                         <div className=' absolute -top-2 -right-2 w-5 h-5 rounded-full bg-cartNumBg flex item-center justify-center'>
