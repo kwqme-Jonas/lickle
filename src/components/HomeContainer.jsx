@@ -1,6 +1,8 @@
 import React from 'react';
 import Delivery from '../img/delivery.png';
 import HeroBg from '../img/heroBg.png';
+import { heroData } from '../utils/data';
+
 
 const HomeContainer = () => {
   return (
@@ -29,16 +31,27 @@ const HomeContainer = () => {
 
         <button type='button' className='bg-gradient-to-br from-orange-500 w-full md:w-auto px-4 py-2 rounded-lg hover:shadow-lg transition-all ease-in-out duration-100'>Order Now</button>
       </div>
-      <div className='py-2 flex-1 flex items-center'>   
+      <div className='py-2 flex-1 flex items-center relative'>   
               <img src={HeroBg}
                   className=' ml-auto h-400 w-full lg:w-auto lg:h-650'
                   alt="hero-bg"
               />
 
-        <div className='w-full h-full absolute top-0 left-0 flex items-center jsudtify-center px-32 py-4'>
-            <div className='w-190 p-2 bg-red-500'></div>
+        <div className='w-full h-full absolute top-0 left-0 flex items-center justify-center px-32 py-4 gap-4 flex-wrap'>
+                  {heroData && heroData.map(n => (
+                      <div key={n.id}
+                          className='w-190 min-w-[190px] bg-cardOverlay backdrop-blur-md rounded-3xl p-4 flex  flex-col items-center justify-center drop-shadow-lg'>
+                      <img src={n.imageSrc} className='w-40    -mt-20' alt="i1" />   
+                         <p className='text-xl text-textColor font-semibold mt-4'>{n.name}</p>
+                         <p className='text-sm text-lighttextGray font-semibold my-3'>
+                             {n.decp}
+                         </p>
+                         <p className='text-sm font-semibold text-headingColor'><span className='text-xs text-red-600'>GHC</span>{n.price}
+                         </p>
+               </div>
+                  ))}
         </div>
-      </div>
+          </div>
     </section>
   )
 }
